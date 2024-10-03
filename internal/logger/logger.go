@@ -7,10 +7,7 @@ import (
 )
 
 func Setup(env string) *slog.Logger {
-	handler := getHandler(env)
-	log := slog.New(*handler)
-
-	return log
+	return slog.New(*getHandler(env))
 }
 
 func getHandler(env string) *slog.Handler {
